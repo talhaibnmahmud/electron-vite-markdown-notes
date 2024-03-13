@@ -39,6 +39,12 @@ function createWindow() {
     win?.webContents.send("main-process-message", new Date().toLocaleString());
   });
 
+  // Disable creating new BrowserWindow via window.open
+  win.webContents.setWindowOpenHandler(({ url }) => {
+    console.log("window.open", url);
+    return { action: "deny" };
+  });
+
   if (VITE_DEV_SERVER_URL) {
     win.loadURL(VITE_DEV_SERVER_URL);
 

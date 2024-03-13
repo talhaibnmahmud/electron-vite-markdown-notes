@@ -1,0 +1,14 @@
+*.txt
+
+out
+dist
+package-lock.json
+bun.lockb
+yarn.lock
+node_modules
+tsconfig.json
+tsconfig.*.json
+*.tsbuildinfo
+*.log
+
+LICENSE

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/electron-vite.animate.svg";
 
@@ -8,24 +7,36 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="flex items-center gap-4">
         <a href="https://electron-vite.github.io" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+          <img
+            src={viteLogo}
+            className="w-10 aspect-square object-cover"
+            alt="Vite logo"
+          />
         </a>
         <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+          <img
+            src={reactLogo}
+            className="w-10 aspect-square object-contain animate-pulse"
+            alt="React logo"
+          />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
+      <h1 className="text-xl text-purple-700 font-semibold">Vite + React</h1>
+      <div className="">
         <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+          count is <span className="font-mono">{count}</span>
         </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          Edit
+          <code className="bg-black bg-opacity-15 px-1 mx-1 rounded">
+            src/App.tsx
+          </code>
+          and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">
+      <p className="font-mono">
         Click on the Vite and React logos to learn more
       </p>
     </>
